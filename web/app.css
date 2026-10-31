@@ -1,0 +1,85 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  background: #17263b;
+  color: #fff;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; height: 100%; overflow: hidden; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+header, #controls, .actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+}
+
+header strong { margin-right: auto; }
+
+button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #8da3bc;
+  border-radius: 8px;
+  background: #243d5b;
+  color: #fff;
+  font: inherit;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:focus-visible, a:focus-visible { outline: 3px solid #ffda66; }
+button:disabled { opacity: 0.6; cursor: wait; }
+button.pressed { background: #547aa6; }
+[hidden] { display: none !important; }
+
+main { flex: 1; min-height: 0; position: relative; }
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  touch-action: none;
+}
+
+#controls { justify-content: space-between; }
+#controls > div { display: flex; gap: 0.4rem; }
+[data-code] { touch-action: none; user-select: none; -webkit-user-select: none; }
+
+#status { margin: 0; padding: 0.2rem 0.6rem; font-size: 0.75rem; }
+
+dialog {
+  max-width: min(32rem, 92vw);
+  max-height: 85dvh;
+  border: 1px solid #8da3bc;
+  border-radius: 12px;
+  background: #17263b;
+  color: #fff;
+}
+
+dialog::backdrop { background: #000a; }
+dialog h1 { font-size: 1.3rem; }
+dialog a { color: #ffda66; }
+.actions { padding: 0; flex-wrap: wrap; }
+
+@media (pointer: fine) and (hover: hover) {
+  #controls { display: none; }
+}
+
+@media (max-height: 450px) {
+  header { padding-block: 0.1rem; }
+  #controls { padding-block: 0.1rem; }
+  #status { font-size: 0.65rem; }
+}

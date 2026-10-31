@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17263b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Plataformer">
+  <title>Plataformer</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./app.css">
+  <script defer src="./mq_js_bundle.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <header>
+    <strong>Plataformer</strong>
+    <button id="install" type="button">Instalar</button>
+    <button id="help" type="button">Ayuda</button>
+  </header>
+  <main>
+    <canvas id="glcanvas" tabindex="0" aria-label="Juego de plataformas"></canvas>
+  </main>
+  <nav id="controls" aria-label="Controles del juego">
+    <div>
+      <button type="button" data-code="ArrowLeft" aria-label="Mover a la izquierda">&#9664;</button>
+      <button type="button" data-code="ArrowRight" aria-label="Mover a la derecha">&#9654;</button>
+    </div>
+    <div>
+      <button type="button" data-code="Enter">Inicio</button>
+      <button type="button" data-code="KeyF">Fuego</button>
+      <button type="button" data-code="Space">Saltar</button>
+    </div>
+  </nav>
+  <p id="status" role="status" aria-live="polite">Cargando juego...</p>
+  <dialog id="help-dialog">
+    <h1>Plataformer</h1>
+    <p id="install-help"></p>
+    <p id="pages-link" hidden>
+      <a href="https://rodrigopanto-create.github.io/plataformer/">Abrir la version HTTPS de GitHub Pages</a>
+    </p>
+    <p>Mover: A/D o flechas. Saltar: espacio, W o arriba. Fuego: F/X.
+      Inicio/continuar: Enter. Reiniciar: R. Menu: Escape.</p>
+    <p>En el telefono puedes mantener pulsados los controles inferiores y usar varios a la vez.</p>
+    <div class="actions">
+      <button type="button" data-code="KeyR">Reiniciar</button>
+      <button type="button" data-code="Escape">Menu</button>
+      <button id="close-help" type="button">Cerrar</button>
+    </div>
+  </dialog>
+</body>
+</html>
